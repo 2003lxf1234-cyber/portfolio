@@ -7,8 +7,8 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ title, description, image, tags, link }: ProjectCardProps) {
-  return (
-    <article className="group relative bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-[1.02]">
+  const CardContent = () => (
+    <>
       <div className="aspect-video overflow-hidden">
         <img
           src={image}
@@ -40,11 +40,9 @@ function ProjectCard({ title, description, image, tags, link }: ProjectCardProps
         </div>
         
         {link && (
-          <a
-            href={link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors duration-300"
+          <span
+            className="inline-flex items-center gap-2 text-sm text-gray-400 group-hover:text-white transition-colors duration-300"
+            onClick={(e) => e.stopPropagation()}
           >
             <span>查看项目</span>
             <svg
@@ -60,9 +58,28 @@ function ProjectCard({ title, description, image, tags, link }: ProjectCardProps
                 d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
               />
             </svg>
-          </a>
+          </span>
         )}
       </div>
+    </>
+  )
+
+  if (link) {
+    return (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block group relative bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-[1.02] cursor-pointer"
+      >
+        <CardContent />
+      </a>
+    )
+  }
+
+  return (
+    <article className="group relative bg-gray-900/50 rounded-xl overflow-hidden border border-gray-800 hover:border-gray-700 transition-all duration-300 hover:transform hover:scale-[1.02]">
+      <CardContent />
     </article>
   )
 }

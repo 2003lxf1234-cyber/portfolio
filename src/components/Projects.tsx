@@ -12,6 +12,14 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
+    title: '待办清单',
+    description: '一个功能完整的待办事项管理应用，支持任务的增删改查、优先级设置、状态管理、截止日期和标签分类等功能。',
+    image: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&h=450&fit=crop',
+    tags: ['React', 'TypeScript', 'Tailwind CSS', 'Vercel'],
+    link: 'https://todo-amber-five-29.vercel.app/',
+  },
+  {
+    id: 2,
     title: '电商平台',
     description: '一个功能完整的电商平台，支持商品浏览、购物车、订单管理等核心功能，采用响应式设计。',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=450&fit=crop',
@@ -19,7 +27,7 @@ const projects: Project[] = [
     link: '#',
   },
   {
-    id: 2,
+    id: 3,
     title: '任务管理应用',
     description: '简洁高效的任务管理工具，支持拖拽排序、标签分类、截止日期提醒等功能。',
     image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=450&fit=crop',
@@ -27,7 +35,7 @@ const projects: Project[] = [
     link: '#',
   },
   {
-    id: 3,
+    id: 4,
     title: '数据可视化仪表盘',
     description: '实时数据可视化仪表盘，支持多种图表类型，数据自动刷新，响应式布局。',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=450&fit=crop',
@@ -35,7 +43,7 @@ const projects: Project[] = [
     link: '#',
   },
   {
-    id: 4,
+    id: 5,
     title: '社交媒体应用',
     description: '具有实时聊天、动态发布、用户关注等功能的社交媒体平台原型。',
     image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&h=450&fit=crop',
